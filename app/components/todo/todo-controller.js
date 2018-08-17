@@ -14,6 +14,13 @@ function draw(todos) {
 	//WHAT IS MY PURPOSE?
 	//BUILD YOUR TODO TEMPLATE HERE
 	var template = ``
+	if (`${todos.length}` === "0") {
+		template += `
+		<p class="mt-3">No todos remaining</p>
+		` } else {
+		template += `
+	<p class="mt-3">${todos.length} todos remaining</p>
+	`}
 	todos.forEach(todo => {
 		let completed = todo.completed
 		if (completed === false) {

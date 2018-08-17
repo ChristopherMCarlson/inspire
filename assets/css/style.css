@@ -75,6 +75,25 @@ body, html {
   color: white;
   text-shadow: 2px 2px #000000;
   font-weight: bold;
-  font-size: 0.7rem;
-  text-decoration: none;
+  font-size: 1rem;
+}
+
+/* unvisited link */
+a:link {
+  color: white;
+}
+
+/* visited link */
+a:visited {
+  color: white;
+}
+
+/* mouse over link */
+a:hover {
+  color: white;
+}
+
+/* selected link */
+a:active {
+  color: white;
 }
