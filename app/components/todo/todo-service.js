@@ -10,7 +10,7 @@ function logError(e) {
 }
 
 
-let todoList = []
+let todoList = ''
 
 export default class TodoService {
 
@@ -19,6 +19,7 @@ export default class TodoService {
 		todoApi.get('')
 			.then((res) => { // <-- WHY IS THIS IMPORTANT????
 				console.log(res.data.data)
+				todoList = (res.data.data)
 				draw(res.data.data)
 			})
 			.catch(logError)
@@ -34,16 +35,16 @@ export default class TodoService {
 			.catch(logError)
 	}
 
-	toggleTodoStatus(todoId) {
+	toggleTodoStatus(todoId, callback) {
 		// MAKE SURE WE THINK THIS ONE THROUGH
 		//STEP 1: Find the todo by its index **HINT** todoList
-
-		var todo = {} ///MODIFY THIS LINE
-
+		console.log(todoList)
+		var todo = todoList.find(toDoObj => toDoObj._id == todoId);///MODIFY THIS LINE
+		todo.completed = !todo.completed;
 		//STEP 2: Change the completed flag to the opposite of what is is **HINT** todo.completed = !todo.completed
 		todoApi.put(todoId, todo)
 			.then(function (res) {
-				//DO YOU WANT TO DO ANYTHING WITH THIS?
+				callback(res)
 			})
 			.catch(logError)
 	}

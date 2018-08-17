@@ -18,13 +18,13 @@ function draw(todos) {
 		let completed = todo.completed
 		if (completed === false) {
 			template += `
-			<input type="checkbox" id="${todo.description}" onchange="app.controllers.toDoController."/>
+			<input type="checkbox" id="${todo.description}" onchange="app.controllers.toDoController.toggleTodoStatus('${todo._id}')"/>
 			<label for="${todo.description}">${todo.description}</label>
 			<br>
 			`
 		} else {
 			template += `
-			<input type="checkbox" id="${todo.description}" />
+			<input type="checkbox" id="${todo.description}" onchange="app.controllers.toDoController.toggleTodoStatus('${todo._id}')"/>
 			<label for="${todo.description}"><strike>${todo.description}</strike></label>
 			<br>
 		`
@@ -73,6 +73,7 @@ export default class TodoController {
 	toggleTodoStatus(todoId) {
 		// asks the service to edit the todo status
 		todoService.toggleTodoStatus(todoId, getTodos)
+		// ADD , getTodos BACK INTO TOGGLETODOSTATUS ABOVE!!!!!!!!!!!!!!!
 		// YEP THATS IT FOR ME
 	}
 
