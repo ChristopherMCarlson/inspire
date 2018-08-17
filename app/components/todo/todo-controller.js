@@ -19,13 +19,13 @@ function draw(todos) {
 		if (completed === false) {
 			template += `
 			<input type="checkbox" id="${todo.description}" onchange="app.controllers.toDoController.toggleTodoStatus('${todo._id}')"/>
-			<label for="${todo.description}">${todo.description}</label>
+			<label for="${todo.description}">${todo.description}</label><button onclick="app.controllers.toDoController.removeTodo('${todo._id}')"><i class="material-icons">delete</i></button>
 			<br>
 			`
 		} else {
 			template += `
 			<input type="checkbox" id="${todo.description}" onchange="app.controllers.toDoController.toggleTodoStatus('${todo._id}')"/>
-			<label for="${todo.description}"><strike>${todo.description}</strike></label>
+			<label for="${todo.description}"><strike>${todo.description}</strike></label><button onclick="app.controllers.toDoController.removeTodo('${todo._id}')"><i class="material-icons">delete</i></button>
 			<br>
 		`
 		}
@@ -79,7 +79,7 @@ export default class TodoController {
 
 	removeTodo(todoId) {
 		// ask the service to run the remove todo with this id
-
+		todoService.removeTodo(todoId, getTodos)
 		// ^^^^ THIS LINE OF CODE PROBABLY LOOKS VERY SIMILAR TO THE toggleTodoStatus
 	}
 
