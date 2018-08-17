@@ -30,7 +30,7 @@ export default class TodoService {
 		todoApi.post('', todo)
 			.then(function (res) { // <-- WHAT DO YOU DO AFTER CREATING A NEW TODO?
 				todoList.push(res)
-				this.getTodos(callback)
+				callback(res)
 			})
 			.catch(logError)
 	}

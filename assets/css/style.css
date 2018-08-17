@@ -16,7 +16,7 @@ body, html {
 .force-to-bottom {
   position:absolute;
   bottom: 5%;
-  width: 100%;
+  width: 50%;
 }
 
 .quote {
@@ -24,8 +24,6 @@ body, html {
   text-shadow: 2px 2px #000000;
   font-weight: bold;
   font-size: 1.5rem;
-  padding-left: 15%;
-  padding-right: 15%;
 }
 
 .author {
@@ -42,7 +40,41 @@ body, html {
     border-radius: 4px;
     color: white;
     line-height: 0.5;
-    font-weight: bold;
     font-size: 1rem;
-  
+    font-family: 'Montserrat', sans-serif;
+  }
+
+.force-to-bottom-todo {
+  position:absolute;
+  bottom: 5%;
+  width: 100%;
+  margin-right: 15px;
+}
+
+.valign-center {
+  display: inline-flex;
+  vertical-align: middle;
+  align-items: center;
+}
+
+.valign-baseline {
+  display: inline-flex;
+  vertical-align: text-top;
+  align-content: center
+}
+
+.material-icons:hover {
+  cursor: pointer;
+  color:red;
+}
+
+.force-to-absolute-bottom {
+  position:absolute;
+  bottom: 1%;
+  width: 100%;
+  color: white;
+  text-shadow: 2px 2px #000000;
+  font-weight: bold;
+  font-size: 0.7rem;
+  text-decoration: none;
 }

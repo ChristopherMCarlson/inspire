@@ -19,22 +19,26 @@ function draw(todos) {
 		if (completed === false) {
 			template += `
 			<input type="checkbox" id="${todo.description}" onchange="app.controllers.toDoController.toggleTodoStatus('${todo._id}')"/>
-			<label for="${todo.description}">${todo.description}</label><button onclick="app.controllers.toDoController.removeTodo('${todo._id}')"><i class="material-icons">delete</i></button>
+			<label for="${todo.description}" class="valign-center">${todo.description}<i class="material-icons md-18" onclick="app.controllers.toDoController.removeTodo('${todo._id}')">clear</i></label>
 			<br>
 			`
 		} else {
 			template += `
 			<input type="checkbox" id="${todo.description}" onchange="app.controllers.toDoController.toggleTodoStatus('${todo._id}')" checked/>
-			<label for="${todo.description}"><strike>${todo.description}</strike></label><button onclick="app.controllers.toDoController.removeTodo('${todo._id}')"><i class="material-icons">delete</i></button>
-			<br>
-		`
+			<label for="${todo.description}" class="valign-center"><strike>${todo.description}</strike><i class="material-icons md-18" onclick="app.controllers.toDoController.removeTodo('${todo._id}')">clear</i></label>
+		<br>
+			`
 		}
 	})
 	template += `
-	<form onsubmit="app.controllers.toDoController.addTodoFromForm(event)">
-	<input type="text" name="toDo" placeholder="Add Item">
-	<button type="submit">Submit</button>
-	</form>
+	<div class="row">
+	<form onsubmit="app.controllers.toDoController.addTodoFromForm(event)" class="input-group input-group-sm m-3">
+  <input type="text" class="form-control" placeholder="New To Do" aria-label="New ToDo" aria-describedby="basic-addon2" name="todo">
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary" type="submit">Submit</button>
+  </div>
+</form>
+	</div>
 	`
 	document.getElementById('todo').innerHTML = template
 	//DONT FORGET TO LOOP
@@ -60,7 +64,7 @@ export default class TodoController {
 		var form = e.target
 		var todo = {
 			// DONT FORGET TO BUILD YOUR TODO OBJECT
-			description: form.toDo.value
+			description: form.todo.value
 		}
 
 		//PASSES THE NEW TODO TO YOUR SERVICE
