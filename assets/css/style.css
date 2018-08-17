@@ -2,7 +2,7 @@ body, html {
   height: 100%;
 }
 
-.weather-card {
+.my-card {
   background: rgba(56, 56, 56, 0.835);
   padding: 5px;
   box-shadow: 1px 1px 2px #000000;
@@ -33,4 +33,16 @@ body, html {
   text-shadow: 2px 2px #000000;
   font-weight: bold;
   font-size: 1rem;
+}
+
+.todo-card{
+    background: rgba(56, 56, 56, 0.835);
+    padding: 5px;
+    box-shadow: 1px 1px 2px #000000;
+    border-radius: 4px;
+    color: white;
+    line-height: 0.5;
+    font-weight: bold;
+    font-size: 1rem;
+  
 }

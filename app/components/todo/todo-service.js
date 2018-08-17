@@ -18,16 +18,18 @@ export default class TodoService {
 		console.log("Getting the Todo List")
 		todoApi.get('')
 			.then((res) => { // <-- WHY IS THIS IMPORTANT????
-
+				console.log(res.data.data)
+				draw(res.data.data)
 			})
 			.catch(logError)
 	}
 
-	addTodo(todo) {
+	addTodo(todo, getTodos) {
 		// WHAT IS THIS FOR???
 		todoApi.post('', todo)
 			.then(function (res) { // <-- WHAT DO YOU DO AFTER CREATING A NEW TODO?
-
+				todoList.push(res)
+				console.log(todoList)
 			})
 			.catch(logError)
 	}

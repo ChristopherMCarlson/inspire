@@ -5,7 +5,7 @@ var weatherService = new WeatherService()
 function drawWeather(res) {
 	let tempF = (res.data.main.temp * 9 / 5) - 459.67
 	document.getElementById('weather').innerHTML = `
-	<div class="weather-card">
+	<div class="my-card">
 	<p>${Math.round(tempF)} &#176</p>
 	<p>Boise</p>
 	</div>

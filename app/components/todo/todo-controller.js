@@ -13,15 +13,37 @@ function getTodos() {
 function draw(todos) {
 	//WHAT IS MY PURPOSE?
 	//BUILD YOUR TODO TEMPLATE HERE
-	var template = ''
-
+	var template = ``
+	todos.forEach(todo => {
+		let completed = todo.completed
+		if (completed === false) {
+			template += `
+			<input type="checkbox" id="${todo.description}" onchange="app.controllers.toDoController."/>
+			<label for="${todo.description}">${todo.description}</label>
+			<br>
+			`
+		} else {
+			template += `
+			<input type="checkbox" id="${todo.description}" />
+			<label for="${todo.description}"><strike>${todo.description}</strike></label>
+			<br>
+		`
+		}
+	})
+	template += `
+	<form onsubmit="app.controllers.toDoController.addTodoFromForm(event)">
+	<input type="text" name="toDo" placeholder="Add Item">
+	<button type="submit">Submit</button>
+	</form>
+	`
+	document.getElementById('todo').innerHTML = template
 	//DONT FORGET TO LOOP
 }
 
 
 export default class TodoController {
 	constructor() {
-		draw()
+		getTodos()
 		// IF YOU WANT YOUR TODO LIST TO DRAW WHEN THE PAGE FIRST LOADS WHAT SHOULD YOU CALL HERE???
 	}
 	// You will need four methods
@@ -38,6 +60,7 @@ export default class TodoController {
 		var form = e.target
 		var todo = {
 			// DONT FORGET TO BUILD YOUR TODO OBJECT
+			description: form.toDo.value
 		}
 
 		//PASSES THE NEW TODO TO YOUR SERVICE
