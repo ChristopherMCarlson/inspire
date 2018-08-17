@@ -24,7 +24,7 @@ function draw(todos) {
 			`
 		} else {
 			template += `
-			<input type="checkbox" id="${todo.description}" onchange="app.controllers.toDoController.toggleTodoStatus('${todo._id}')"/>
+			<input type="checkbox" id="${todo.description}" onchange="app.controllers.toDoController.toggleTodoStatus('${todo._id}')" checked/>
 			<label for="${todo.description}"><strike>${todo.description}</strike></label><button onclick="app.controllers.toDoController.removeTodo('${todo._id}')"><i class="material-icons">delete</i></button>
 			<br>
 		`
