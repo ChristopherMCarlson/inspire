@@ -14,6 +14,8 @@ export default class ImageController {
   constructor() {
     iS.getImage(drawImg)
   }
-
+  refresh() {
+    iS.getImage(drawImg)
+  }
 }
 
