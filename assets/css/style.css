@@ -40,7 +40,6 @@ body, html {
     border-radius: 4px;
     color: white;
     line-height: 0.5;
-    font-size: 1rem;
     font-family: 'Montserrat', sans-serif;
   }
 
@@ -116,8 +115,14 @@ a:active {
   margin-top: -3%;
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 700px) {
   .todo-card {
     font-size: 0.7rem;
+  }
+}
+
+@media only screen and (min-width: 701px) {
+  .todo-card {
+    font-size: 1rem;
   }
 }
