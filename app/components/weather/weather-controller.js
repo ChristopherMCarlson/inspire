@@ -7,14 +7,13 @@ function drawWeather(res) {
 	console.log(res)
 	let tempF = (res.data.main.temp * 9 / 5) - 459.67
 	document.getElementById('weather').innerHTML = `
-	<div class="weather col-sm-1">
+	
 	<div class="row justify-content-center">
 	<img src="${weatherIco}" class="image-fluid weather" />
 	<p class="align-middle">${Math.round(tempF)} &#176</p>
 	</div>
 	<div class="row justify-content-center">
 	<p>Boise</p>
-	</div>
 	</div>
 	`
 }

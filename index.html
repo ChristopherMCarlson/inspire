@@ -14,18 +14,15 @@
 
 
 <body id="body">
-	<div id="background" style="
-		height: 100%;
-		background-attachment: fixed;
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: cover;">
+	<div id="background" class="parallax" style="">
 
 
-		<button onclick="app.controllers.imageController.refresh(); app.controllers.quoteController.getQuote()" class="m-3 btn btn-outline-secondary">Refresh</button>
 
-		<div id="weather" class="nm d-flex flex-row-reverse">
+		<div class="d-flex py-5">
+			<button onclick="app.controllers.imageController.refresh(); app.controllers.quoteController.getQuote()" class="m-3 btn btn-outline-secondary">Refresh</button>
+			<div id="weather" class="weather offset-md-10 col-md-1">
 
+			</div>
 		</div>
 
 		<div id="clock" class="container-fluid d-flex justify-content-center align-items-center mt-5" style="flex-direction:column">
