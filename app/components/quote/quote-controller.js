@@ -4,8 +4,8 @@ let qs = new QuoteService
 
 function drawQuote(res) {
 	document.getElementById('quote').innerHTML = `
-	<p class="quote">${res.quote}</p>
-	<p class="author">-${res.author}</p>
+	${res[0].content}
+	<p class="author">-${res[0].title}</p>
 	`
 }
 

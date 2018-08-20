@@ -115,3 +115,9 @@ a:active {
 .nm {
   margin-top: -3%;
 }
+
+@media only screen and (max-width: 400px) {
+  .todo-card {
+    font-size: 0.7rem;
+  }
+}
