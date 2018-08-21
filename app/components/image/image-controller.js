@@ -3,11 +3,16 @@ import ImageService from "./image-service.js"
 
 const iS = new ImageService
 
+function randomNum() {
+  return Math.floor(Math.random() * 200);
+}
+
 function drawImg(img) {
-  document.getElementById('background').style.backgroundImage = `url(${img.urls.full})`
+  let ranNum = randomNum()
+  document.getElementById('background').style.backgroundImage = `url(${img.hits[ranNum].largeImageURL})`
   document.getElementById('attribution').innerHTML = `
-  <p>Photo by <a href="${img.links.html}" target="_blank">${img.user.name}</a> on <a href="https://unsplash.com/" target="_blank">Unsplash</a>
-  `
+  <p>Photo supplied by <a href="https://pixabay.com/">Pixabay</a></p>
+   `
 }
 
 export default class ImageController {
