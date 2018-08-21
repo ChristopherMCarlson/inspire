@@ -4,12 +4,12 @@ import ImageService from "./image-service.js"
 const iS = new ImageService
 
 function randomNum() {
-  return Math.floor(Math.random() * 200);
+  return Math.floor(Math.random() * 600);
 }
 
 function drawImg(img) {
   let ranNum = randomNum()
-  document.getElementById('background').style.backgroundImage = `url(${img.hits[ranNum].largeImageURL})`
+  document.getElementById('background').style.backgroundImage = `url(${img[ranNum].largeImageURL})`
   document.getElementById('attribution').innerHTML = `
   <p>Photo supplied by <a href="https://pixabay.com/">Pixabay</a></p>
    `
