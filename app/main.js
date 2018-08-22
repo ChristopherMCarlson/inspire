@@ -7,6 +7,7 @@ function saveData() {
   localStorage.saveServer
 }
 
+
 function startTime() {
   var today = new Date();
   var h = today.getHours();
