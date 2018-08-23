@@ -2,7 +2,7 @@
 
 const todoApi = axios.create({
 	baseURL: 'https://bcw-sandbox.herokuapp.com/api/ChrisMCarlson/todos/',
-	timeout: 3000
+	timeout: 30000
 });
 
 function logError(e) {
